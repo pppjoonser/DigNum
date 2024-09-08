@@ -342,6 +342,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1128593817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1128593819}
+  - component: {fileID: 1128593818}
+  m_Layer: 0
+  m_Name: Land
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1128593818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128593817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588d6fd0b287b5e4dbc0c87c1bb87c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mapSO: {fileID: 11400000, guid: 0dc07c84a46994f4ba4a5d0c98e09241, type: 2}
+  _blockPrefab: {fileID: 9021607655939999389, guid: 64c1e9e73b6d3814d808602dcd791771, type: 3}
+  _blockParent: {fileID: 1128593817}
+--- !u!4 &1128593819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128593817}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1421976381
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +400,7 @@ GameObject:
   - component: {fileID: 1421976383}
   - component: {fileID: 1421976382}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapSO: {fileID: 11400000, guid: 0dc07c84a46994f4ba4a5d0c98e09241, type: 2}
-  levelSO: {fileID: 0}
+  levelSO: {fileID: 11400000, guid: 25467f2e0c08afe448cc0f64424f6ede, type: 2}
 --- !u!4 &1421976383
 Transform:
   m_ObjectHideFlags: 0
@@ -395,3 +442,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1421976383}
+  - {fileID: 1128593819}
