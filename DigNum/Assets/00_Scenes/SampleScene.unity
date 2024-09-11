@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &124806545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124806546}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &124806546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124806545}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588d6fd0b287b5e4dbc0c87c1bb87c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mapSO: {fileID: 11400000, guid: 0dc07c84a46994f4ba4a5d0c98e09241, type: 2}
+  _mapSO: {fileID: 11400000, guid: 1711868c3678994408039c765334b6e0, type: 2}
+  _blockSpriteByLevelSO: {fileID: 11400000, guid: 7899f8ac75ca03647987b3816f2f89f1, type: 2}
   _blockPrefab: {fileID: 9021607655939999389, guid: 64c1e9e73b6d3814d808602dcd791771, type: 3}
   _blockParent: {fileID: 1128593817}
 --- !u!4 &1128593819
@@ -382,13 +414,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128593817}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 5.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1421976381
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc410c4c8b1e334496185e05acde5dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSO: {fileID: 11400000, guid: 0dc07c84a46994f4ba4a5d0c98e09241, type: 2}
+  mapSO: {fileID: 11400000, guid: 1711868c3678994408039c765334b6e0, type: 2}
   levelSO: {fileID: 11400000, guid: 25467f2e0c08afe448cc0f64424f6ede, type: 2}
 --- !u!4 &1421976383
 Transform:
@@ -443,3 +475,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1421976383}
   - {fileID: 1128593819}
+  - {fileID: 124806546}

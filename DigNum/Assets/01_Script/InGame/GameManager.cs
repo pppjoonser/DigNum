@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +11,8 @@ public class GameManager : MonoBehaviour
     private MapSO mapSO;
     [SerializeField]
     private LevelSO levelSO;
+
+    public event Action OnPlayerMove;
 
     public static GameManager Instance { get; private set; }
 
@@ -21,10 +26,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Start()
-    {
         ResetMap();
     }
 
@@ -41,12 +42,7 @@ public class GameManager : MonoBehaviour
         }
 
         // 20번 맵을 아래로 이동
-        for (int i = 0; i < 20; i++)
-        {
-            PlayerMoveDown();
-        }
-
-        Test();
+        StartCoroutine(TestCoroutine());
     }
 
     private void PlayerMoveDown()
@@ -72,16 +68,16 @@ public class GameManager : MonoBehaviour
                 mapSO.itemMap[mapSO.itemMap.GetLength(0) - 1, i] = Random.Range(0, 9);
             }
         }
+        OnPlayerMove?.Invoke();
     }
 
-    private void Test()
+    private IEnumerator TestCoroutine()
     {
-        for (int i = 0; i < mapSO.map.GetLength(0); i++)
+        for (int i = 0; i < 20; i++)
         {
-            for (int j = 0; j < mapSO.map.GetLength(1); j++)
-            {
-                print(mapSO.map[i, j]);
-            }
+            PlayerMoveDown();
+            yield return new WaitForSeconds(0.5f);
+
         }
     }
 }

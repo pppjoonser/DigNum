@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SO/map")]
+[CreateAssetMenu(menuName = "SO/mapSO")]
 public class MapSO : ScriptableObject
 {
     public int[,] map = new int[20,12];
