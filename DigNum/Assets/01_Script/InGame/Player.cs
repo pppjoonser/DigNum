@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
                 _targetposition[i, j] = 0;
             }
         }
-        currentPlayerPosition = new Vector2Int(6, 6);
+        currentPlayerPosition = new Vector2Int(0, 0);
     }
 
     private void OnEnable()
@@ -45,10 +45,10 @@ public class Player : MonoBehaviour
 
     private void PlayerMove(Vector2 input)
     {
-        Vector2Int newPosition = currentPlayerPosition + new Vector2Int(0, (int)input.x);
+        Vector2Int newPosition = currentPlayerPosition + new Vector2Int((int)input.x, 0);
 
         // 맵 범위를 벗어나지 않는지 체크
-        if (newPosition.y < 0 || newPosition.y >= 12)
+        if (newPosition.x < 0 || newPosition.x >= 12)
         {
             return; // 맵 범위를 벗어나면 이동하지 않음
         }
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         currentPlayerPosition = newPosition;
         _playerPosition[currentPlayerPosition.x, currentPlayerPosition.y] = 1;
 
-        if (Mathf.Abs(input.y) >= 1 && CheckTargetEmpty(currentPlayerPosition + new Vector2Int(1,0)))
+        if (Mathf.Abs(input.y) >= 1 && CheckTargetEmpty(currentPlayerPosition + new Vector2Int(0,1)))
         {
             GameManager.Instance.PlayerMoveDown();
         }

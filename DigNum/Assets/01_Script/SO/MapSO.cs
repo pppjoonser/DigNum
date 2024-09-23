@@ -6,6 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/_mapSO")]
 public class MapSO : ScriptableObject
 {
-    public int[,] map = new int[20,12];
-    public int[,] itemMap = new int[20,12];
+    public int[,] map = new int[12,20];
+    public int[,] itemMap = new int[12,20];
 }
