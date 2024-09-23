@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
 
-    private void Awake()
+    private void Awake()//인스턴스
     {
         if (Instance == null)
         {
@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
         ResetMap();
     }
 
-    private void ResetMap()
+
+    private void ResetMap()//게임 시작할때 맵 새로 까는거
     {
         // 맵과 아이템 맵 초기화
         for (int i = 0; i < mapSO.map.GetLength(0); i++)
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(TestCoroutine());
     }
 
-    private void PlayerMoveDown()
+    public void PlayerMoveDown()//내려갈때
     {
         for (int i = 0; i < mapSO.map.GetLength(0) - 1; i++)
         {
@@ -71,9 +72,9 @@ public class GameManager : MonoBehaviour
         OnPlayerMove?.Invoke();
     }
 
-    private IEnumerator TestCoroutine()
+    private IEnumerator TestCoroutine()//잡것
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 14; i++)
         {
             PlayerMoveDown();
             yield return new WaitForSeconds(0.5f);

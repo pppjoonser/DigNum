@@ -12,6 +12,6 @@ public class BlockSpriteByLevelSO : ScriptableObject
 [Serializable]
 public struct Block
 {
-    public int blockLevel;
-    public Sprite blockSprite;
+    public int blockLevel;//블록 단단함
+    public Sprite blockSprite;//블록 생겨먹은거
 }
