@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d006302575836b4c92a97db9f314bbd, type: 3}
+  m_Name: 01.Plus A and B
+  m_EditorClassIdentifier: 
+  mathProblemImage: {fileID: 0}
+  mathProblemDescription: "a\uC640 b\uB97C \uB354\uD558\uB294 \uC2DD\uC744 \uB9CC\uB4DC\uC138\uC694"
+  mathProblemTitle: "\uBBF8\uC9C0\uC218 \uB450 \uAC1C \uB354\uD558\uAE30"
+  mathProblemCorrectAnswer: a+b

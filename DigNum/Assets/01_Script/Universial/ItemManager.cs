@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
-    List<ItemSO> inventoryItems = new List<ItemSO>();
+    public List<ItemSO> inventoryItems = new List<ItemSO>();
     public static ItemManager Instance {  get; private set; }
     private void Awake()
     {

@@ -60,6 +60,11 @@ public class LandVeiwer : MonoBehaviour
                         spriteMap[j, i].sprite = block.blockSprite;
                         _textMeshPro[j, i].text = _mapSO.map[j, i].ToString();
                     }
+
+                    if (_mapSO.itemMap[j, i] != null)
+                    {
+                        spriteMap[j,i].sprite = _mapSO.itemMap[j,i].itemTile;
+                    }
                 }
             }
         }

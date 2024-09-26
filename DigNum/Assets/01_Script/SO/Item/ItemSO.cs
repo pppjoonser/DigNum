@@ -7,5 +7,6 @@ public class ItemSO : ScriptableObject
 {
     public GameObject itemPrefab;
     public int numberInQuestion;
-    public string nameOfItem;
+    public string itemName;
+    public Sprite itemTile;
 }

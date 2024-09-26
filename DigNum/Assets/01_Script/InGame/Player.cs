@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private MapSO _mapSO;
     [SerializeField]
     private PlayerSO _playerData;
+    [SerializeField]
+    private GameObject _gameOverUI;
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour
             }
         }
         currentPlayerPosition = new Vector2Int(5, 5);
-
+        transform.position = new Vector3(currentPlayerPosition.x - 5.5f, -currentPlayerPosition.y + 5.5f, 0);
 
         if (InputReader.Instance != null)
         {
@@ -71,6 +73,10 @@ public class Player : MonoBehaviour
             _playerData.fuel--;
             GameManager.Instance.TryMove();
         }
+        else
+        {
+            _gameOverUI.SetActive(true);
+        }
     }
 
     private void PlayerMove(Vector2 input)
@@ -88,7 +94,7 @@ public class Player : MonoBehaviour
         if (CheckTargetEmpty(newPosition))
         {
             currentPlayerPosition = new Vector2Int( newPosition.x, currentPlayerPosition.y);
-            transform.position = new Vector3(currentPlayerPosition.x - 5.5f, -currentPlayerPosition.y + 5, 0);  // 좌표를 화면 상 위치로 변환
+            transform.position = new Vector3(currentPlayerPosition.x - 5.5f, -currentPlayerPosition.y + 5.5f, 0);  // 좌표를 화면 상 위치로 변환
 
             // 만약 아래로 이동했을 때 빈 공간이라면 맵을 아래로 이동
             if (Mathf.Abs(input.y) >= 1)
@@ -97,5 +103,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-
 }

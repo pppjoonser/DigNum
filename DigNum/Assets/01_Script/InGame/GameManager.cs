@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < mapSO.map.GetLength(0); j++)
             {
-                mapSO.map[j, i] = mapSO.map[j,i + 1 ];
+                mapSO.map[j, i] = mapSO.map[j, i + 1];
                 mapSO.itemMap[j, i] = mapSO.itemMap[j, i + 1];
             }
         }
@@ -71,10 +71,14 @@ public class GameManager : MonoBehaviour
             {
                 mapSO.itemMap[i, mapSO.itemMap.GetLength(1) - 1] = itemList.items[Random.Range(0, itemList.items.Count)];
             }
+            else
+            {
+                mapSO.itemMap[i, mapSO.itemMap.GetLength(1) - 1] = null;
+            }
         }
         TryMove();
     }
-    
+
     public void TryMove()
     {
         OnPlayerMove?.Invoke();
@@ -95,8 +99,8 @@ public class GameManager : MonoBehaviour
     {
         if (mapSO.itemMap[diggingPosition.x, diggingPosition.y] != null)
         {
-            if(mapSO.map[diggingPosition.x, diggingPosition.y]<=0)
-            ItemManager.Instance.AddItem(mapSO.itemMap[diggingPosition.x, diggingPosition.y]);
+            if (mapSO.map[diggingPosition.x, diggingPosition.y] <= 0)
+                ItemManager.Instance.AddItem(mapSO.itemMap[diggingPosition.x, diggingPosition.y]);
         }
     }
 }
