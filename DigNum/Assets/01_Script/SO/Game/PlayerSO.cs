@@ -7,4 +7,5 @@ public class PlayerSO : ScriptableObject
 {
     public int fuel;
     public int maxFuel;
+    public int digPower;
 }

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f6e80f344d74594c976382fdd6a0938, type: 3}
-  m_Name: Playerstat
+  m_Script: {fileID: 11500000, guid: 69f98896f89158841bfc8b677717cc13, type: 3}
+  m_Name: Zero
   m_EditorClassIdentifier: 
-  fuel: 0
-  maxFuel: 60
-  digPower: 2
+  itemPrefab: {fileID: 0}
+  numberInQuestion: 0
+  nameOfItem: 

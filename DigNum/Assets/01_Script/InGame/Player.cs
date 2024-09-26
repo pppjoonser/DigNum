@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     private bool CheckTargetEmpty(Vector2Int target)
     {
         DigTheBlock(target);
-        if (_mapSO.map[target.x, target.y] == 0)
+        if (_mapSO.map[target.x, target.y] <= 0)
         {
             return true;
         }
@@ -60,14 +60,14 @@ public class Player : MonoBehaviour
 
     private void DigTheBlock(Vector2Int blockpoint)
     {
-        if (_mapSO.map[blockpoint.x, blockpoint.y] == 0)
+        if (_mapSO.map[blockpoint.x, blockpoint.y] <= 0)
         {
             return;
         }
         
         if(_playerData.fuel > 0)
         {
-            _mapSO.map[blockpoint.x,blockpoint.y]--;
+            _mapSO.map[blockpoint.x,blockpoint.y]-= _playerData.digPower;
             _playerData.fuel--;
             GameManager.Instance.TryMove();
         }
@@ -93,7 +93,6 @@ public class Player : MonoBehaviour
             // 만약 아래로 이동했을 때 빈 공간이라면 맵을 아래로 이동
             if (Mathf.Abs(input.y) >= 1)
             {
-                Debug.Log("ddd");
                 GameManager.Instance.PlayerMoveDown();
             }
         }

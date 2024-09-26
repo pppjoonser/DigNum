@@ -16,7 +16,7 @@ public class LandVeiwer : MonoBehaviour
 
     public void Start()
     {
-        GameManager.Instance.OnPlayerMove += SetVisual;
+        GameManager.Instance.OnPlayerMove += SetVisualMap;
         CreateVisual();
     }
     private void CreateVisual()//생겨먹은거 설정
@@ -32,9 +32,9 @@ public class LandVeiwer : MonoBehaviour
                 _textMeshPro[j, i] = Tile.GetComponentInChildren <TextMeshPro>();
             }
         }
-        SetVisual();
+        SetVisualMap();
     }
-    private void SetVisual()//이거 어케 생겨먹음?->보여주기
+    private void SetVisualMap()//이거 어케 생겨먹음?->보여주기
     {
         if (spriteMap == null || _textMeshPro == null) return;
         for (int i = 0; i < _mapSO.map.GetLength(1); i++)
@@ -44,7 +44,7 @@ public class LandVeiwer : MonoBehaviour
                 //foreach로 검사하면서 값 확인하고 쭉쭉 올리기
                 foreach(Block block in _blockSpriteByLevelSO.blocks)
                 {
-                    if (_mapSO.map[j, i] == 0) 
+                    if (_mapSO.map[j, i] <= 0) 
                     {
                         spriteMap[j, i].sprite = null;
                         spriteMap[j, i].color = Color.clear;

@@ -7,5 +7,5 @@ using UnityEngine;
 public class MapSO : ScriptableObject
 {
     public int[,] map = new int[12,20];
-    public int[,] itemMap = new int[12,20];
+    public ItemSO[,] itemMap = new ItemSO[12,20];
 }

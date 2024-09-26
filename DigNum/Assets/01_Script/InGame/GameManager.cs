@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private MapSO mapSO;
     [SerializeField]
     private LevelSO levelSO;
+    [SerializeField]
+    private ItemListSO itemList;
 
     public event Action OnPlayerMove;
 
@@ -39,7 +41,7 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < mapSO.map.GetLength(0); j++)
             {
                 mapSO.map[j, i] = 0;
-                mapSO.itemMap[j, i] = 0;
+                mapSO.itemMap[j, i] = null;
             }
         }
 
@@ -67,7 +69,7 @@ public class GameManager : MonoBehaviour
             float rand = Random.Range(0, 100);
             if (rand > levelSO.itemSpawn)
             {
-                mapSO.itemMap[i, mapSO.itemMap.GetLength(1) - 1] = Random.Range(0, 9);
+                mapSO.itemMap[i, mapSO.itemMap.GetLength(1) - 1] = itemList.items[Random.Range(0, itemList.items.Count)];
             }
         }
         TryMove();
@@ -89,11 +91,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GetItem(Vector2Int diggingPosition)
+    public void CheckItem(Vector2Int diggingPosition)
     {
-        if (mapSO.itemMap[diggingPosition.x, diggingPosition.y] != 0)
+        if (mapSO.itemMap[diggingPosition.x, diggingPosition.y] != null)
         {
-
+            if(mapSO.map[diggingPosition.x, diggingPosition.y]<=0)
+            ItemManager.Instance.AddItem(mapSO.itemMap[diggingPosition.x, diggingPosition.y]);
         }
     }
 }

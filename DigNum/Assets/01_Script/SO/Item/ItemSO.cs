@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSO : MonoBehaviour
+[CreateAssetMenu(menuName = "SO/item")]
+public class ItemSO : ScriptableObject
 {
     public GameObject itemPrefab;
     public int numberInQuestion;
+    public string nameOfItem;
 }
