@@ -21,12 +21,7 @@ public class InputReader : MonoBehaviour
         {
             Destroy(gameObject); // 이미 인스턴스가 있으면 중복된 오브젝트를 제거
         }
-
-        DontDestroyOnLoad(gameObject); 
-
-    }
-    private void OnEnable()
-    {
+    
         if (inputActions == null)
         {
             inputActions = new PlayerControl();

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -69,7 +70,13 @@ public class GameManager : MonoBehaviour
                 mapSO.itemMap[i, mapSO.itemMap.GetLength(1) - 1] = Random.Range(0, 9);
             }
         }
+        TryMove();
+    }
+    
+    public void TryMove()
+    {
         OnPlayerMove?.Invoke();
+
     }
 
     private IEnumerator TestCoroutine()//¿‚∞Õ
@@ -78,6 +85,14 @@ public class GameManager : MonoBehaviour
         {
             PlayerMoveDown();
             yield return new WaitForSeconds(0.5f);
+
+        }
+    }
+
+    public void GetItem(Vector2Int diggingPosition)
+    {
+        if (mapSO.itemMap[diggingPosition.x, diggingPosition.y] != 0)
+        {
 
         }
     }

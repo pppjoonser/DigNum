@@ -10,7 +10,7 @@ public class LandVeiwer : MonoBehaviour
     [SerializeField] MapSO _mapSO;
     [SerializeField] BlockSpriteByLevelSO _blockSpriteByLevelSO;
     [SerializeField] private GameObject _blockPrefab, _blockParent;
-    private GameObject[,] _gameMap = new GameObject[12,20];//게임오브젝트 맵
+    public GameObject[,] _gameMap = new GameObject[12,20];//게임오브젝트 맵
     private SpriteRenderer[,] spriteMap = new SpriteRenderer[12,20];//맵에 있는거 스프라이트
     private TextMeshPro[,] _textMeshPro = new TextMeshPro[12,20];//맵에 있는거 텍스트
 
